@@ -58,13 +58,13 @@ export default class MapScreen extends Component {
           scrollEnabled={true}
           zoomEnabled={true}
           showsUserLocation={false}
-          styleURL={Mapbox.mapStyles.dark}
+          styleURL={mapStyle}
           // onRegionDidChange={this.onRegionDidChange}
           // onRegionWillChange={this.onRegionWillChange}
           onLongPress={this.onLongPress}
           onTap={this.onTap}
         />
-      
+
       </View>
     )
   }
