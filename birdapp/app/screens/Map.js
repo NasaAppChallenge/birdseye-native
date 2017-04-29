@@ -8,7 +8,7 @@ import {
 import Mapbox, { MapView } from 'react-native-mapbox-gl';
 
 const accessToken = 'pk.eyJ1IjoiYWxleG1mMyIsImEiOiJjajF2OHF6NHAwMDEwMnFuenphY3o5cG13In0.awCN0YN3--_wVfp7r-xjgA';
-const mapStyle = 'mapbox://styles/alexmf3/cj1w59evy00262so0kefbbrhg';
+const mapStyle = 'mapbox://styles/mapbox/streets-v10';
 
 Mapbox.setAccessToken(accessToken);
 
