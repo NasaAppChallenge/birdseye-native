@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import Camera from 'react-native-camera';
 import RNFetchBlob from 'react-native-fetch-blob';
+import { Icon } from 'react-native-elements';
 
 const protocol = 'https';
 const host = 'birdseye.space';
@@ -19,10 +20,6 @@ const api_endpoints = {
 
 }
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-  },
   preview: {
     flex: 1,
     justifyContent: 'flex-end',
@@ -35,9 +32,37 @@ const styles = StyleSheet.create({
     color: '#000',
     padding: 10,
     margin: 40
+  },
+  wrapper: {
+    flexDirection: 'column',
+    flex: 1,
+    alignItems: 'stretch'
+  },
+  containerCamera: {
+    flex: 1
+  },
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  containerBtns: {
+    bottom: 0
+  },
+  button: {
+    flex: 1,
+    padding: 10,
+    backgroundColor: 'green',
+
+  },
+  buttonText: {
+    color: 'white',
+    alignItems: 'center',
+  },
+  icon: {
+    alignItems: 'center',
   }
 });
-
 
 export default class CameraScreen extends Component {
 
@@ -49,21 +74,29 @@ export default class CameraScreen extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <Camera
-          ref={(cam) => {
-            this.camera = cam;
-          }}
-          style={styles.preview}
-          aspect={Camera.constants.Aspect.fill}
-          captureTarget={Camera.constants.CaptureTarget.disk}>
-          <TouchableHighlight
-            onPress={this.takePicture.bind(this)}>
-            <Text style={styles.capture}>
-                  SNAP
-            </Text>
-          </TouchableHighlight>
-        </Camera>
+      <View style={styles.wrapper}>
+        <View style={styles.containerCamera}>
+          <Camera
+            ref={(cam) => {
+              this.camera = cam;
+            }}
+            style={styles.preview}
+            aspect={Camera.constants.Aspect.fill}
+            captureTarget={Camera.constants.CaptureTarget.disk}>
+          </Camera>
+        </View>
+        <View style={styles.containerBtns}>
+          <View style={styles.container}>
+            <TouchableHighlight
+                    onPress={this.takePicture.bind(this)}
+                    style={styles.button}>
+                      <View style={styles.container}>
+                        <Icon iconStyle={styles.icon} name="camera" color={'white'} size={35} />
+                        <Text style={styles.buttonText}>CAPTURE</Text>
+                      </View>
+            </TouchableHighlight>
+          </View>
+        </View>
       </View>
     );
   }
