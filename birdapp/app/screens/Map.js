@@ -64,7 +64,7 @@ export default class MapScreen extends Component {
           onLongPress={this.onLongPress}
           onTap={this.onTap}
         />
-      
+
       </View>
     )
   }
