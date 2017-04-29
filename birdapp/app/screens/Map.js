@@ -84,7 +84,7 @@ export default class MapScreen extends Component {
             rotateEnabled={true}
             scrollEnabled={true}
             zoomEnabled={true}
-            showsUserLocation={false}
+            showsUserLocation={true}
             styleURL={mapStyle}
             // onRegionDidChange={this.onRegionDidChange}
             // onRegionWillChange={this.onRegionWillChange}
