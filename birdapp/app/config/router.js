@@ -3,7 +3,7 @@ import { StackNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/Home';
 import CameraScreen from '../screens/Camera';
-import Map from '../screens/Map';
+import MapScreen from '../screens/Map';
 
 export const AppNav = StackNavigator({
   HomeScreen: {
@@ -18,8 +18,8 @@ export const AppNav = StackNavigator({
       title: "Camera"
     })
   },
-  Map: {
-    screen: Map,
+  MapScreen: {
+    screen: MapScreen,
     navigationOptions: ({navigation}) => ({
       title: "Map"
     })

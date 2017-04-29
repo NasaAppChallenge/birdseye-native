@@ -26,6 +26,9 @@ export default class HomeScreen extends Component {
   onCameraSelect = () => {
     this.props.navigation.navigate('CameraScreen');
   }
+  onMapSelect = () => {
+    this.props.navigation.navigate('MapScreen');
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -33,6 +36,12 @@ export default class HomeScreen extends Component {
                 onPress={() => this.onCameraSelect()}>
                   <View style={styles.button}>
                     <Text style={styles.buttonText}>Take photo</Text>
+                  </View>
+        </TouchableHighlight>
+        <TouchableHighlight
+                onPress={() => this.onMapSelect()}>
+                  <View style={styles.button}>
+                    <Text style={styles.buttonText}>View Map</Text>
                   </View>
         </TouchableHighlight>
       </View>
