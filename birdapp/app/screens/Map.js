@@ -88,7 +88,7 @@ export default class MapScreen extends Component {
             rotateEnabled={true}
             scrollEnabled={true}
             zoomEnabled={true}
-            showsUserLocation={false}
+            showsUserLocation={true}
             styleURL={mapStyle}
             userTrackingMode={this.state.userTrackingMode}
             onChangeUserTrackingMode={this.onChangeUserTrackingMode}
