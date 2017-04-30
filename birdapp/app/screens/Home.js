@@ -31,15 +31,16 @@ const styles = StyleSheet.create({
   button: {
     flex: 1,
     padding: 10,
-    backgroundColor: '#ededed',
+    backgroundColor: '#0066cc',
     borderWidth: 0.5,
     borderColor: '#d6d7da',
   },
   buttonText: {
-    color: 'grey',
+    color: 'white',
     alignItems: 'center',
   },
   icon: {
+    color: 'white',
     alignItems: 'center',
   },
   image: {
