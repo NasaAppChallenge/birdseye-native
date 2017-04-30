@@ -8,7 +8,7 @@ import {
 import HomeScreen from '../screens/Home';
 import CameraScreen from '../screens/Camera';
 import MapScreen from '../screens/Map';
-
+import PhotoScreen from '../screens/Photo';
 const styles = StyleSheet.create({
   icontext: {
     color: 'grey',
@@ -37,4 +37,10 @@ export const AppNav = StackNavigator({
       title: 'CAPTURE'
     })
   },
+  PhotoScreen: {
+    screen: PhotoScreen,
+    navigationOptions: ({navigation}) => ({
+      title: 'PHOTO'
+    })
+  }
 });

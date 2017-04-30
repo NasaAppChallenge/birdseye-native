@@ -57,7 +57,8 @@ export default class MapScreen extends Component {
       center: {
         latitude: 40.72052634,
         longitude: -73.97686958312988
-      }
+      },
+      userTrackingMode: Mapbox.userTrackingMode.follow,
 
     }
   }
@@ -70,6 +71,9 @@ export default class MapScreen extends Component {
   }
   onCameraSelect = () => {
     this.props.navigation.navigate('CameraScreen');
+  }
+  onChangeUserTrackingMode = (userTrackingMode) => {
+    this.setState({ userTrackingMode });
   }
   render() {
     return(
@@ -86,6 +90,8 @@ export default class MapScreen extends Component {
             zoomEnabled={true}
             showsUserLocation={false}
             styleURL={mapStyle}
+            userTrackingMode={this.state.userTrackingMode}
+            onChangeUserTrackingMode={this.onChangeUserTrackingMode}
             // onRegionDidChange={this.onRegionDidChange}
             // onRegionWillChange={this.onRegionWillChange}
             onLongPress={this.onLongPress}

@@ -69,9 +69,10 @@ export default class CameraScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      img: null
+      imgLink: ""
     }
   }
+  componentWillReceiveProps
   render() {
     return (
       <View style={styles.wrapper}>
@@ -102,15 +103,15 @@ export default class CameraScreen extends Component {
   }
   uploadPicture(base64Image) {
     const url = `${protocol}://${host}/${api_endpoints.media}`
-    console.log(url);
     RNFetchBlob.fetch('POST', url, {
         'Content-Type' : 'application/octet-stream',
-      }, base64Image)
-      .then((res) => {
-        console.log(res.data)
-      })
+      }, RNFetchBlob.wrap(base64Image))
+      .then((res) => res.json())
+      .then((data) => this.onCameraSnap(data.data[0]))
       .catch((err) => {
         // error handling ..
+        console.log("error")
+        console.log(err)
       })
   }
   takePicture() {
@@ -119,16 +120,13 @@ export default class CameraScreen extends Component {
     this.camera.capture({metadata: options})
       .then(
         (data) => {
-          RNFetchBlob.fs.readFile(data.path, 'base64').then(
-            (base64data) => {
-              let base64Image = `data:image/jpeg;base64,${base64data}`;
-              this.setState({img: base64Image});
-              //console.log(base64Image);
-              this.uploadPicture(base64Image);
-            }
-          )
+          this.uploadPicture(data.path);
         }
     )
       .catch(err => console.error(err));
+  }
+
+  onCameraSnap(data) {
+    this.props.navigation.navigate('PhotoScreen', {picUrl: data});
   }
 }
