@@ -4,9 +4,12 @@ import {
   StyleSheet,
   View,
   Text,
-  TouchableHighlight
+  TouchableHighlight,
+  Image,
+  Dimensions
 } from 'react-native';
 import { Icon } from 'react-native-elements';
+const deviceWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -38,6 +41,11 @@ const styles = StyleSheet.create({
   },
   icon: {
     alignItems: 'center',
+  },
+  image: {
+    flex: 1,
+    width: deviceWidth,
+    height: 100
   }
 })
 export default class HomeScreen extends Component {
@@ -51,7 +59,10 @@ export default class HomeScreen extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.containerImage}>
-          <Text>App logo goes here</Text>
+          <Image
+            style={styles.image}
+            source={require('../res/first_screen.png')}
+            />
         </View>
         <View style={styles.containerBtns}>
           <View style={styles.container}>
