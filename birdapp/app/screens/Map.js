@@ -53,13 +53,40 @@ export default class MapScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      zoom: 11,
+      zoom: 2,
       center: {
-        latitude: 40.72052634,
-        longitude: -73.97686958312988
+        latitude: 37.47111,
+        longitude: -122.55111
       },
       userTrackingMode: Mapbox.userTrackingMode.follow,
-
+      annotations: [{
+        coordinates: [37.774000, -122.431700],
+        type: 'point',
+        title: 'This is marker 1',
+        subtitle: 'Photographer name:',
+        id: 'marker1'
+      },
+      {
+        coordinates: [37.774500, -122.431600],
+        type: 'point',
+        title: 'This is marker 2',
+        subtitle: 'Photographer name:',
+        id: 'marker2'
+      },
+      {
+        coordinates: [37.775000, -122.431500],
+        type: 'point',
+        title: 'This is marker 3',
+        subtitle: 'Photographer name:',
+        id: 'marker3'
+      },
+      {
+        coordinates: [37.775500, -122.431400],
+        type: 'point',
+        title: 'This is marker 4',
+        subtitle: 'Photographer name:',
+        id: 'marker4'
+      }]
     }
   }
   onLongPress = (location) => {
@@ -90,6 +117,7 @@ export default class MapScreen extends Component {
             zoomEnabled={true}
             showsUserLocation={true}
             styleURL={mapStyle}
+            annotations={this.state.annotations}
             userTrackingMode={this.state.userTrackingMode}
             onChangeUserTrackingMode={this.onChangeUserTrackingMode}
             // onRegionDidChange={this.onRegionDidChange}
