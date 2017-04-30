@@ -38,11 +38,12 @@ export const AppNav = StackNavigator({
   HomeScreen: {
     screen: HomeScreen,
     navigationOptions: ({navigation}) => ({
-      // headerLeft: <View style={styles.containerheader}>
-      //               <Text style={styles.text}>BIRDS</Text>
-      //               <Text style={styles.text1}>EYE</Text>
-      //             </View>,
-      title: 'HOME',
+      headerLeft: <TouchableHighlight onPress={ () => navigation.goBack()}>
+                    <View style={styles.containerheader}>
+                        <Text style={styles.text}>BIRDS</Text>
+                        <Text style={styles.text1}>EYE</Text>
+                    </View>
+                  </TouchableHighlight>,
       headerStyle: {
         backgroundColor: 'white'
       }
@@ -51,11 +52,12 @@ export const AppNav = StackNavigator({
   MapScreen: {
     screen: MapScreen,
     navigationOptions: ({navigation}) => ({
-      // headerLeft: <View style={styles.containerheader}>
-      //               <Text style={styles.text}>BIRDS</Text>
-      //               <Text style={styles.text1}>EYE</Text>
-      //             </View>,
-      title: 'MAP',
+      headerLeft: <TouchableHighlight onPress={ () => navigation.goBack()}>
+                    <View style={styles.containerheader}>
+                        <Text style={styles.text}>BIRDS</Text>
+                        <Text style={styles.text1}>EYE</Text>
+                    </View>
+                  </TouchableHighlight>,
       headerStyle: {
         backgroundColor: 'white'
       }
@@ -79,7 +81,7 @@ export const AppNav = StackNavigator({
   PhotoScreen: {
     screen: PhotoScreen,
     navigationOptions: ({navigation}) => ({
-      // headerLeft: <TouchableHighlight onPress={ () => navigation}>
+      // headerLeft: <TouchableHighlight onPress={ () => navigation.goBack()}>
       //               <View style={styles.containerheader}>
       //                   <Text style={styles.text}>BIRDS</Text>
       //                   <Text style={styles.text1}>EYE</Text>

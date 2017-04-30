@@ -80,7 +80,7 @@ export default class HomeScreen extends Component {
                     style={styles.button}>
                       <View style={styles.container}>
                         <Icon iconStyle={styles.icon} name="photo-camera" color={'grey'} size={35} />
-                        <Text style={styles.buttonText}>CAPTURE</Text>
+                        <Text style={styles.buttonText}>CAMERA</Text>
                       </View>
             </TouchableHighlight>
           </View>
